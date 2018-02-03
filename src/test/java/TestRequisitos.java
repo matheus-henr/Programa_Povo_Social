@@ -1,3 +1,5 @@
+import static org.junit.Assert.assertEquals;
+
 import java.time.LocalDate;
 
 import org.junit.Before;
@@ -46,12 +48,6 @@ public class TestRequisitos {
 
     @Test
 	public void testRequsitos(){
-     // tem que retornar true
-	 boolean teste1 = 	requisitos.verificarRequisitos(pessoa);
-	 //tem que retornar false
-	 boolean teste2 =  requisitos.verificarRequisitos(pessoa2);
-	 
-	 System.out.println("teste requisito 1: " + teste1);
-	 System.out.println("teste requisito 2: " + teste2);
+     assertEquals(true, requisitos.verificarRequisitos(pessoa));
 	}
 }

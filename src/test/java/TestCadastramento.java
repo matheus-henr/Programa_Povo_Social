@@ -1,11 +1,14 @@
 import java.time.LocalDate;
 
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 
 import br.com.mhdev.socialpovo.model.EstadoCivil;
+import br.com.mhdev.socialpovo.model.GeradorDeConta;
 import br.com.mhdev.socialpovo.model.Pessoa;
+import br.com.mhdev.socialpovo.model.Registro;
 import br.com.mhdev.socialpovo.model.Sexo;
 import br.com.mhdev.socialpovo.negocio.Cadastramento;
 import junit.framework.TestCase;
@@ -54,29 +57,20 @@ public class TestCadastramento  extends TestCase{
 	@Test
 	public void testCadastramento(){
 		try {
-			String teste1 = cadastramento.cadastrar(pessoa);
-			System.out.println("cadastramento1" + teste1 );
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-	}
-	
-	
-	@Ignore
-	public void testCadastramentoComFalha(){
-		try {
+		GeradorDeConta conta = cadastramento.cadastrar(pessoa); 	
+		assertNotNull(conta.getConta());
 			
-		//cadastramento.cadastrar(pessoa2); //execeçao
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
+			// TODO Auto-generated catcDh block
 			e.printStackTrace();
 		}
 		
 	}
 	
-	
-	
+	@Test
+	public void testCalculoAuxilio(){
+		assertEquals(78.50, cadastramento.calcularAuxilio(pessoa));
+	}
+		
 	
 }	

@@ -1,6 +1,4 @@
-package br.com.mhdev.socialpovo.negocio;
-
-import br.com.mhdev.socialpovo.model.Pessoa;
+package br.com.mhdev.socialpovo.model;
 
 public class Registro {
 	private int id;

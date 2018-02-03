@@ -1,4 +1,4 @@
-package br.com.mhdev.socialpovo.negocio;
+package br.com.mhdev.socialpovo.model;
 
 import java.time.LocalDate;
 import 	java.util.Random;
@@ -8,13 +8,18 @@ public class GeradorDeConta {
 	private Registro registro;
 	private String conta;
 	
+	
 	public GeradorDeConta(Registro registro) {
+		if(registro != null){
 		this.registro = registro;
-		gerar();
+			gerar();
+		}
 		
 	}
 	
-	public void gerar(){
+	
+	
+	private void gerar(){
 		StringBuffer sb = new StringBuffer();
 		sb.append(44);
 		sb.append(random());
@@ -46,5 +51,9 @@ public class GeradorDeConta {
 	return sb.toString();
 	}
 	
+	
+	public String getConta() {
+		return conta;
+	}
 
 }
